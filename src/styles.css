@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+    background-color: #f5f5f5;
 }
 
 body {
@@ -31,17 +32,17 @@ body {
 }
 
 .ml10 {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .mr10 {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .mt10 {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .mb10 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
