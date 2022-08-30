@@ -14,6 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { HomeComponent } from './pages/home/home.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
