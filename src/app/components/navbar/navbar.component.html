@@ -24,7 +24,7 @@
 
     <a 
     (click)="logout()"
-    *ngIf="isLoggedIn" mat-icon-button class="example-icon favorite-icon ml40"
+    *ngIf="isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon ml40"
         aria-label="Example icon-button with heart icon">
         Logout
     </a>
