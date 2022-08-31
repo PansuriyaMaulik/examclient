@@ -1,7 +1,6 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from './../../services/user.service';
 import { Component, OnInit } from '@angular/core';
-import swal from 'sweetalert2';
 import Swal from 'sweetalert2';
 
 @Component({
