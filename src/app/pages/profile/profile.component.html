@@ -1,0 +1,48 @@
+<mat-card *ngIf="user">
+    <h1>Your Profile Details</h1>
+    <!-- {{ user | json }} -->
+    <mat-card-content>
+        <div class="boostrap-wrapper">
+            <div class="container">
+
+                <div class="container text-center">
+                    <img src="../../../assets/logo.png" alt="" class="profile-image" />
+
+                    <h1 class="mt20">{{ user.firstName }} {{user.lastName}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- table Details -->
+                        <table class="table text-center mb20">
+                                <tr *ngIf="user.username"> 
+                                    <td>Username</td> 
+                                    <td>{{ user.username }}</td> 
+                                </tr>
+                                <tr *ngIf="user.id"> 
+                                    <td>Userid</td> 
+                                    <td>EXAM{{ user.id }}</td> 
+                                </tr>
+                                <tr *ngIf="user.phone"> 
+                                    <td>Phone</td> 
+                                    <td>{{ user.phone }}</td> 
+                                </tr>
+                                <tr *ngIf="user.authorities[0].authority"> 
+                                    <td>Role</td> 
+                                    <td>{{ user.authorities[0].authority }}</td> 
+                                </tr>
+                                <tr> 
+                                    <td>Status</td> 
+                                    <td>{{ user.enabled ? "ACTIVE":"NON-ACTIVE" }}</td> 
+                                </tr>
+                        </table>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">UPDATE</button>
+                            <button class="left-space" mat-raised-button color="accent">SHARE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
