@@ -48,7 +48,7 @@ export class SignupComponent implements OnInit {
         //failure
         console.log(error);
         // alert('Something went wrong..!!');
-        this.snack.open('Something went wrong..!!', '', {
+        this.snack.open('User with this username is already in database. Try with another name..!!', '', {
           duration: 3000,
         });
       }
