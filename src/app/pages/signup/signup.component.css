@@ -11,3 +11,10 @@
         0 1px 1px 0 #9b9b9b,
         0 1px 3px 0 #9b9b9b;
 }
+
+.profile-image {
+    max-height: 100px;
+    max-width: 100px;
+    border: 2px solid #3f51b5;
+    border-radius: 50%;
+}

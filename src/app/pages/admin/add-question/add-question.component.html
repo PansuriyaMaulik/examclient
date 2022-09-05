@@ -1,0 +1,74 @@
+<!-- {{question | json}} -->
+<div class="bootstrap-wrapper">
+    <div class="row mt20">
+        <div class="col-md-12">
+            <mat-card>
+                <h1>Adding Question to <span style="font-weight: bold;">{{qTitle}}</span></h1>
+                <mat-card-header>
+                    <mat-card-subtitle>Enter the details of new question</mat-card-subtitle>
+                </mat-card-header>
+                
+                <mat-card-content>
+                    <form class="mt10" (submit)="addQuestion()">
+                        <!-- Contetnt Field -->
+                        <mat-form-field class="w100">
+                            <mat-label>Enter Question Content:</mat-label>
+                            <textarea required name="content" [(ngModel)]="question.content" placeholder="Enter here.." matInput rows="3"></textarea>
+                        </mat-form-field>
+
+                        <!-- option -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Option1 -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Enter Option1</mat-label>
+                                    <input required [(ngModel)]="question.option1" name="option1" type="text" matInput />
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Option2 -->
+                                <mat-form-field class="w100">
+                                    <!-- <mat-label>Enter Option2</mat-label> -->
+                                    <input required [(ngModel)]="question.option2" name="option2" type="text" matInput />
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <!-- Option3 -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Enter Option3</mat-label>
+                                    <input [(ngModel)]="question.option3" name="option3" type="text" matInput />
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Option4 -->
+                                <mat-form-field class="w100">
+                                    <mat-label>Enter Option4</mat-label>
+                                    <input [(ngModel)]="question.option4" name="option4" type="text" matInput />
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                         <!-- Answer -->
+                         <mat-form-field class="w100">
+                            <mat-label>Select Answer:</mat-label>
+                            <mat-select required [(ngModel)]="question.answer" name="answer">
+                                <mat-option *ngIf="question.option1" [value]="question.option1">{{question.option1}}</mat-option>
+                                <mat-option *ngIf="question.option2" [value]="question.option2">{{question.option2}}</mat-option>
+                                <mat-option *ngIf="question.option3" [value]="question.option3">{{question.option3}}</mat-option>
+                                <mat-option *ngIf="question.option4" [value]="question.option4">{{question.option4}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <!-- Button -->
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">Add</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

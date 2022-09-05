@@ -11,21 +11,18 @@
         Login
     </a>
 
-    <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button
-        class="example-icon favorite-icon left-space" aria-label="Example icon-button with heart icon">
+    <a *ngIf="!isLoggedIn" [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon left-space"
+        aria-label="Example icon-button with heart icon">
         Register
     </a>
 
-    <button 
-    *ngIf="isLoggedIn && null" mat-icon-button class="example-icon favorite-icon left-space"
-        aria-label="Example icon-button with heart icon">
+    <button *ngIf="isLoggedIn && user" class="example-icon favorite-icon left-space" mat-button
+        routerLink="/admin/profile" aria-label="Example icon-button with heart icon">
         {{ user.username }}
-</button>
+    </button>
 
-    <a 
-    (click)="logout()"
-    *ngIf="isLoggedIn" [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon ml40"
-        aria-label="Example icon-button with heart icon">
+    <a (click)="logout()" *ngIf="isLoggedIn" [routerLink]="'/login'" mat-icon-button
+        class="example-icon favorite-icon ml40" aria-label="Example icon-button with heart icon">
         Logout
     </a>
 

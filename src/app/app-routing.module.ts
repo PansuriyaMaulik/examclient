@@ -1,3 +1,11 @@
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { NormalGuard } from './services/normal.guard';
 import { AdminGuard } from './services/admin.guard';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
@@ -7,6 +15,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 
 const routes: Routes = [
   {
@@ -27,8 +36,45 @@ const routes: Routes = [
   {
     path:'admin',
     component: DashboardComponent,
-    pathMatch: 'full',
     canActivate: [AdminGuard],
+    children: [
+      {
+        path: '',
+        component: WelcomeComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+      },
+      {
+        path: 'categories',
+        component: ViewCategoriesComponent,
+      },
+      {
+        path: 'add-category',
+        component: AddCategoryComponent,
+      },
+      {
+        path: 'quizzes',
+        component: ViewQuizzesComponent,
+      },
+      {
+        path: 'add-quiz',
+        component: AddQuizComponent,
+      },
+      {
+        path: 'quiz/:qid',
+        component: UpdateQuizComponent,
+      },
+      {
+        path: 'view-questions/:qid/:title',
+        component: ViewQuizQuestionsComponent,
+      },
+      {
+        path: 'add-question/:qid/:title',
+        component: AddQuestionComponent,
+      },
+    ]
   },
   {
     path:'user-dashboard',
