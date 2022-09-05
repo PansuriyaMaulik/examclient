@@ -13,4 +13,27 @@ export class QuestionService {
   {
     return this._http.get(`${baseUrl}/question/quiz/all/${qid}`)
   }
+
+  //Add question
+  public addQuestion(question){
+    return this._http.post(`${baseUrl}/question/`, question)
+  }
+
+  //get the single question
+  public getQuestion(questionId)
+  {
+    return this._http.get(`${baseUrl}/question/${questionId}`);
+  }
+
+  //update Question
+  public updateQuestion(question)
+  {
+    return this._http.put(`${baseUrl}/question/`, question);
+  }
+
+  //delete Question
+  public deleteQuestion(questionId)
+  {
+    return this._http.delete(`${baseUrl}/question/${questionId}`, questionId);
+  }
 }

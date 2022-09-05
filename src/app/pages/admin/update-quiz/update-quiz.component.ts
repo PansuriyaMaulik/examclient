@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdateQuizComponent implements OnInit {
 
   constructor(private _route: ActivatedRoute, private _quiz: QuizService, private _category: CategoryService, private _snack: MatSnackBar, private _router: Router) { }
-
+  
   qId =0;
   quiz;
   categories;
