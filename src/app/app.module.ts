@@ -43,6 +43,7 @@ import { InstructionsComponent } from './pages/user/instructions/instructions.co
 import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     CKEditorModule,
     MatRadioModule,
     MatProgressSpinnerModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+    }),
   ],
   providers: [AuthInterceptorProviders],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

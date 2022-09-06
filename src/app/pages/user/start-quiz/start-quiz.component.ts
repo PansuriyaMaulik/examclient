@@ -35,11 +35,8 @@ export class StartQuizComponent implements OnInit {
     this._question.getQuestionsOfQuizForTest(this.qid).subscribe(
       (data:any)=>{
         this.questions = data;
-
+        console.log(data)
         this.timer = this.questions.length * 2 * 60;
-        this.questions.forEach((q) => {
-          q['givenAnswer'] = '';
-        });
         this.startTimer();
       },
       (error)=>{
@@ -95,22 +92,43 @@ export class StartQuizComponent implements OnInit {
   }
 
   evalQuiz(){
-    this.isSubmit = true;
+    //Call to server to check question
+    this._question.evalQuiz(this.questions).subscribe(
+      (data:any)=>{
+        console.log(data);
+        this.marksGot = parseFloat(Number(data.marksGot).toFixed(2));
+        this.correctAnswers = data.correctAnswers;
+        this.attempted = data.attempted;
+        this.isSubmit = true;
+      },
+      (error)=>{
+        this._snack.open("Error while gettiing quiz", '', {
+          duration: 3000,
+        })
+      }
+    )
 
-        this.questions.forEach(q => {
-          if(q.givenAnswer == q.answer){
-            this.correctAnswers++;
-            let marksSingle = this.questions[0].quiz.maxMarks / this.questions.length;
-            this.marksGot += marksSingle;
-          }
+    //Client side question and answer checking
+    // this.isSubmit = true;
 
-          if(q.givenAnswer.trim()!=''){
-            this.attempted++;
-          }
-        });
+        // this.questions.forEach(q => {
+        //   if(q.givenAnswer == q.answer){
+        //     this.correctAnswers++;
+        //     let marksSingle = this.questions[0].quiz.maxMarks / this.questions.length;
+        //     this.marksGot += marksSingle;
+        //   }
 
-        console.log("Correct: "+this.correctAnswers)
-        console.log("marks"+ this.marksGot)
-        console.log("attempted"+ this.attempted)
+        //   if(q.givenAnswer.trim()!=''){
+        //     this.attempted++;
+        //   }
+        // });
+
+        // console.log("Correct: "+this.correctAnswers)
+        // console.log("marks"+ this.marksGot)
+        // console.log("attempted"+ this.attempted)
+  }
+
+  printPage(){
+    window.print();
   }
 }

@@ -4,7 +4,16 @@
         <div class="row">
             <div class="col-md-2 mt10">
                 <!-- Instructions -->
-                <h3>Instructions:</h3>
+                <mat-card style="margin-top: 50px">
+                    <mat-card-content>
+                        <h3><b>Instructions:</b></h3>
+                        <ul>
+                            <li>Do not refesh the page otherwise you will get new question in this quiz.</li>
+                            <li>Do not switch the tab.</li>
+                            <li>Do not minimize the window.</li>
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
             </div>
             <div class="col-md-8">
                 <!-- Question -->
@@ -75,7 +84,7 @@
                 </mat-card-content>
 
                 <mat-card-actions class="text-center">
-                    <button mat-raised-button color="primary">Print</button>
+                    <button mat-raised-button color="primary" (click)="printPage()">Print</button>
                     <button mat-raised-button color="accent" [routerLink]="'/user-dashboard/0'">Home</button>
                 </mat-card-actions>
             </mat-card>
