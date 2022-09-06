@@ -37,6 +37,12 @@ import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.compo
 import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
 import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
+import { StartQuizComponent } from './pages/user/start-quiz/start-quiz.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -58,6 +64,10 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     UpdateQuizComponent,
     ViewQuizQuestionsComponent,
     AddQuestionComponent,
+    UserSidebar,
+    LoadQuizComponent,
+    InstructionsComponent,
+    StartQuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +87,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MatSlideToggleModule,
     MatSelectModule,
     CKEditorModule,
-    
+    MatRadioModule,
+    MatProgressSpinnerModule,
   ],
   providers: [AuthInterceptorProviders],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
