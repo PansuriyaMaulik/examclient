@@ -1,30 +1,6 @@
-<div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row text-center mt20">
-            <div class="col-md-6 offset-md-3">
-                <h1>Welcome to exam portal</h1>
-
-                <mat-card class="example-card">
-                    <mat-card-header>
-                      <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>Shiba Inu</mat-card-title>
-                      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                    </mat-card-header>
-                    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                    <mat-card-content>
-                      <p>
-                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                        bred for hunting.
-                      </p>
-                    </mat-card-content>
-                    <mat-card-actions>
-                      <button mat-raised-button color="primary">LIKE</button>
-                      <button mat-raised-button color="accent">SHARE</button>
-                    </mat-card-actions>
-                  </mat-card>
-
-            </div>
-        </div>
-    </div>
+<mat-card class="banner">
+  <div class="text-center">
+    <h1 class="mt255">Welcome To ExamPortal</h1>
+    <p>Good luck on your test..! The days you spent studying has led up to this day, and I know that you’re going to do great! Do your best and believe in yourself..!</p>
+    <button mat-raised-button color="accent" class="mb255" [routerLink]="'/login'">Get Start</button>
 </div>

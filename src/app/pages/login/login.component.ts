@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   }
 
   formSubmit() {
-    console.log("Login button clicked");
 
     if (this.loginData.username.trim() == '' || this.loginData.username == null) {
       this.snack.open('Username is required..!!', '', {
@@ -72,7 +71,7 @@ export class LoginComponent implements OnInit {
       (error) => {
         console.log("Error !");
         console.log(error);
-        this.snack.open("Invalid Details !! Try again,", '', {
+        this.snack.open("Incorrect Username or Password..!!", '', {
           duration: 3000,
         });
       }

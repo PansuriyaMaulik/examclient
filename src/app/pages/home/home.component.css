@@ -2,7 +2,21 @@
     max-width: 400px;
   }
   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)) ,url("../../../assets/quiz.jpg");
     background-size: cover;
-  }
+    color: white;
+    
+}
+
+.bg-primary {
+  background: #009688 !important;
+}
+
+.mt255{
+  margin-top: 255px;
+}
+
+.mb255{
+  margin-bottom: 255px;
+}
